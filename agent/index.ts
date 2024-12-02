@@ -1,5 +1,18 @@
 import { log } from "./logger.js";
 
+import { OnLoadInterceptor } from './onload.js'
+
+let index = 0;
+OnLoadInterceptor.attach((modulePath: string, base: NativePointer) => {
+  
+  if (modulePath.indexOf('libil2cpp.so') >= 0) {
+    console.log('hit module loading! @name ' + modulePath + ' @' + base)
+    //if(index == 1) hookNative(base);
+    index++;
+  }
+})
+
+
 const header = Memory.alloc(16);
 header
     .writeU32(0xdeadbeef).add(4)

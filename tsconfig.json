@@ -1,10 +1,15 @@
 {
   "compilerOptions": {
-    "target": "es2020",
-    "lib": ["es2020"],
-    "allowJs": true,
-    "noEmit": true,
+    "target": "esnext",
+    "lib": [ "es2022" ],
+    "experimentalDecorators": true,
+    "module": "NodeNext",
+    "allowJs": false,
+    "noEmit": false,
+    "esModuleInterop": false,
+    "moduleResolution": "nodenext",
     "strict": true,
-    "esModuleInterop": true
-  }
+    "sourceMap": true
+  },
+  "files": [ "index.ts" ]
 }
